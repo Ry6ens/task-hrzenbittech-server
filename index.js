@@ -1,7 +1,12 @@
 const express = require("express");
 const cors = require("cors");
+const dotenv = require("dotenv");
 
 const contactRoutes = require("./routes/contacts");
+
+dotenv.config();
+
+const { PORT = 4000 } = process.env;
 
 const app = express();
 
@@ -10,6 +15,6 @@ app.use(express.json());
 
 app.use("/api/contacts", contactRoutes);
 
-app.listen(4000, () => {
+app.listen(PORT, () => {
   console.log("Connected to backend.");
 });
