@@ -9,7 +9,7 @@ dotenv.config();
 const { PORT = 4000 } = process.env;
 
 const corsOrigin = {
-  origin: "https://task-hrzenbittech.vercel.app/",
+  origin: "https://task-hrzenbittech.vercel.app",
   credentials: true,
   optionSuccessStatus: 200,
 };
