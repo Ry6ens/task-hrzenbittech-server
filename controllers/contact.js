@@ -29,8 +29,8 @@ const addContact = (req, res) => {
   const values = [req.body.name, req.body.email, req.body.comment];
 
   db.query(q, [values], (err, data) => {
-    if (err) return res.send(err);
-    return res.json(data);
+    if (err) return res.status(500).send(err);
+    return res.json("We will contact you back shortly.");
   });
 };
 
