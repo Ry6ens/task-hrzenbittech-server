@@ -12,17 +12,6 @@ const getContacts = (req, res) => {
   });
 };
 
-const getContact = (req, res) => {
-  const q =
-    "SELECT p.id, `username`, `title`, `desc`, p.img, u.img AS userImg, `cat`,`date` FROM users u JOIN posts p ON u.id = p.uid WHERE p.id = ? ";
-
-  db.query(q, [req.params.id], (err, data) => {
-    if (err) return res.status(500).json(err);
-
-    return res.status(200).json(data[0]);
-  });
-};
-
 const addContact = (req, res) => {
   const q = "INSERT INTO contacts(`name`, `email`, `comment`) VALUES (?)";
 
@@ -30,7 +19,7 @@ const addContact = (req, res) => {
 
   db.query(q, [values], (err, data) => {
     if (err) return res.status(500).send(err);
-    return res.json("We will contact you back shortly.");
+    return res.json("We will contact you back shortly");
   });
 };
 
