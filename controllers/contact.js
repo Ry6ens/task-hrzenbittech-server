@@ -23,4 +23,4 @@ const addContact = (req, res) => {
   });
 };
 
-module.exports = { getContacts, getContact, addContact };
+module.exports = { getContacts, addContact };
