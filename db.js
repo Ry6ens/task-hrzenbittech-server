@@ -5,7 +5,8 @@ dotenv.config();
 
 const { CLEARDB_DATABASE_URL } = process.env;
 
-const db = mysql.createConnection(CLEARDB_DATABASE_URL);
+// const db = mysql.createConnection(CLEARDB_DATABASE_URL);
+const db = mysql.createPool(CLEARDB_DATABASE_URL);
 
 db.connect((err) => {
   if (err) throw err;
